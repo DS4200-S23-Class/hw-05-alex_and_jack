@@ -15,7 +15,7 @@ The purpose of this assignment is to practice creating interactive visualization
 
 1. You can find a reference for what your final webpage should look like in the "reference" folder of your cloned directory. 
 
-1. Create a GitHub Page for your repo and add the link to your GitHub Page above where you see `[insert your clickable hyperlink here]`. 
+1. Create a GitHub Page for your repo and add the link to your GitHub Page above where you see https://ds4200-s23-class.github.io/hw-05-alex_and_jack/. 
 
 1. Using the index.html file included in your repo, an *external* stylesheet (no styling should be done inline; it should all be done via external css), and an *external* javascript file (no javascript code should be included in your html file; it should all be done via external js) please do the following: 
 

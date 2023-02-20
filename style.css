@@ -2,7 +2,29 @@ body{
 	font-family: Arial;
 }
 
-.header{
+.main-header{
 	text-align: center;
 	font-size: 30px;
+}
+
+#column-right {
+	width: 40vw;
+	height: 40vh;
+	max-height: 100vh;
+}
+
+#column-left {
+	width: 60vw;
+	height: 40vh;
+	max-height: 100vh;
+}
+
+.container {
+	display: flex;
+}
+
+#visualization-container {
+	width: 60vw;
+	height: 50vh;
+	max-height: 100vh;
 }
