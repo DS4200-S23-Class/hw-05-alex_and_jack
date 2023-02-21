@@ -33,3 +33,43 @@ d3.csv("data/scatter-data.csv").then((data) => {
         .attr("fill", (d) => { return d.color; }); // fill by color
 
 }); // .then is closed here 
+
+const VIS_HEIGHT = FRAME_HEIGHT - MARGINS.top - MARGINS.bottom;
+const VIS_WIDTH = FRAME_WIDTH - MARGINS.left - MARGINS.right; 
+
+const FRAME2 = d3.select("#bar-chart")
+                  .append("svg")
+                    .attr("height", FRAME_HEIGHT)
+                    .attr("width", FRAME_WIDTH)
+                    .attr("class", "frame"); 
+
+// read data and create plot
+d3.csv("data/bar-data.csv").then((data) => {
+
+  // find max amount
+  const MAX_AMOUNT = d3.max(data, (d) => { return parseInt(d.amount); });
+          // Note: data read from csv is a string, so you need to
+          // cast it to a number if needed 
+  
+  // Define scale functions that maps our data values 
+  // (domain) to pixel values (range)
+  const X_SCALE = d3.scaleBand() 
+                    .domain(data.map((d) => d.category)) 
+                    .range([0, VIS_WIDTH]) 
+                    .padding(0.2); 
+
+  const Y_SCALE = d3.scaleLinear() 
+                    .domain([0, (MAX_AMOUNT + 100)]) // add some padding  
+                    .range([VIS_HEIGHT, 0]); 
+
+  // Use X_SCALE and Y_SCALE to plot our points
+  FRAME2.selectAll("rect")  
+      .data(data) // passed from .then  
+      .enter()       
+      .append("rect")  
+        .attr("x", (d) => { return (X_SCALE(d.category) + MARGINS.left); }) 
+        .attr("y", (d) => { return (Y_SCALE(d.amount) + MARGINS.top); }) 
+        .attr("width", X_SCALE.bandwidth()) 
+        .attr("height", (d) => { return (VIS_HEIGHT - Y_SCALE(d.amount)); })
+        .attr("class", "bar");
+});
