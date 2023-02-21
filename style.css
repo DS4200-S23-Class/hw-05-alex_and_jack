@@ -2,29 +2,32 @@ body{
 	font-family: Arial;
 }
 
+h2 {
+	font-size: 20px;
+}
+
 .main-header{
 	text-align: center;
 	font-size: 30px;
 }
 
-#column-right {
-	width: 40vw;
-	height: 40vh;
-	max-height: 100vh;
-}
-
-#column-left {
-	width: 60vw;
-	height: 40vh;
-	max-height: 100vh;
-}
-
 .container {
 	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+}
+.left {
+	width: 60%;
+	margin-right: 20px;
+}
+.right {
+	width: 40%;
+}
+.chart {
+	margin-bottom: 20px;
 }
 
-#visualization-container {
-	width: 60vw;
-	height: 50vh;
-	max-height: 100vh;
+.add-input {
+	margin-bottom: 10px;
 }
