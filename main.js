@@ -1,3 +1,8 @@
+// Homework 5
+// Alex Lee and Jack Kovensky
+
+
+console.log("linked!")
 
 //create the dimensions for the chart frame
 const FRAME_HEIGHT = 600;
