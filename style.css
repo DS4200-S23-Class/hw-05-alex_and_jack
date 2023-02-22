@@ -1,23 +1,51 @@
 body {
-  margin: 0;
-  padding: 0;
-}
-.container {
-  display: flex;
-}
-.left {
-  flex: 0 0 60%;
-}
-.right {
-  flex: 0 0 40%;
-}
-svg {
-  width: 100%;
-  height: 100%;
+    font-family: 'Arial';
 }
 
-#visualization-container {
-	width: 60vw;
-	height: 50vh;
-	max-height: 100vh;
+.centered {
+  text-align: center;
+}
+
+.column {
+    float: left;
+}
+  
+.left {
+    width: 60%;
+}
+  
+.right {
+    width: 40%;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.border {
+    stroke: black;
+    stroke-width: 5px;
+}
+
+.point {
+    fill: deepskyblue;
+}
+
+.point:hover {
+    fill: orange;
+}
+
+
+rect:hover{
+    fill: orange;
+}
+
+.tooltip{
+  position: absolute;
+  background-color: silver;
+  border:  solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 5px;
 }

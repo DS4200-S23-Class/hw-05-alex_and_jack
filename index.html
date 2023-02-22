@@ -3,66 +3,98 @@
 
 <head>
     <meta charset=utf-8/>
-    
-    <!-- Link stylesheet -->
-    <link rel="stylesheet"  href="style.css">
-
     <title>hw-05</title>
-<script src='js/d3.v6.1.1/d3.min.js'></script>
+
+    <script src="js/d3.v6.1.1/d3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
-<h1 class="main-header">hw-05: Interactive Graph with D3</h1>
+    
+    <h1 class="centered"> hw-05: Interactive Graph with D3 </h1>
 
-    <div class="container">
-        <!-- Create left column to hold the graphs -->
-        <div id="visualization-container">
-            <svg width = "80%"></svg>
+    <div class="flex">
+        <div class="column left">
+            <div class="gen">
+                <div id="vis"></div>
+                <div id="bar"></div>
+            </div>
         </div>
         
-        <!-- Create right column to add the points -->
-        <div class="right">
+          <div class="column right">
 
-                <div>
-                    <div id="coordinates"></div>
-                    <label class ="add-input" for="x-input">Select the X coordinate for the point you want to add:</label>
-                        <select id="x-input">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                        </select>
-                </div>
+            <p id="output"> </p>
 
-                <div>
-                    <label class ="add-input" for="y-input">Select the Y coordinate for the point you want to add:</label>
-                        <select id="y-input">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                        </select>
-                </div>
-               
-            </form>
+            <div class="dropdown">
+                <label for="x"> Select the X coordinate for the point you want to add: </label>
+                    <select id="x">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
+            </div>
+        
+            <div class="dropdown">
+                <label for="y"> Select the Y coordinate for the point you want to add: </label>
+                <select id="y"> 
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
+            </div>
             
+        
+            <button type="button" id="point-button">Add point</button>
+        
+            
+        
+        
         </div>
-    </div>
-    
-<h1 id=acknowledgements>Acknowledgements</h1>
+        
+        </div>
+        
+        <div>
+            <h2 class="centered"> Acknowledgements </h2>
+            <ul>
+                <li>Professor Mosca</li>
+                <li>
+                    <a href="https://www.geeksforgeeks.org/d3-js-band-bandwidth-function/">
+                    Bandwidth Function for Spacing</a>
+                </li>
+                <li>
+                    <a href="https://www.w3.org/wiki/CSS/Properties/color/keywords">
+                    CSS Formatting Colors</a>
+                </li>
+                <li>
+                    <a href="https://www.tutorialsteacher.com/d3js/create-bar-chart-using-d3js">
+                    Bar Charts in D3</a>
+                </li>
+                <li>
+                    <a href="https://www.tutorialsteacher.com/d3js/axes-in-d3">
+                        Axis in D3
+                    </a>
+                </li>
+            </ul>
+        
+        </div>
 
-<script src = "main.js"></script>
+
+    
+    <script src="main.js"></script>
+
 </body>
 
 </html>
