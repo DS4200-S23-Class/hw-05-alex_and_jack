@@ -151,6 +151,7 @@ function plot_bar(){
         .call(d3.axisLeft(Y_SCALE).ticks(9))
         .attr("font-size", "14px");
     
+    //create a tooltip for the barchart
     const TOOLTIP = d3.select("#bar")
         .append("div")
         .attr("class", "tooltip")
@@ -170,7 +171,7 @@ function plot_bar(){
             TOOLTIP.style("opacity", 0)
         }
 
-
+    // add event listener functions to the frame
     FRAME2.selectAll(".bar")
         .on("mouseover", barMouseover)
         .on("mousemove", barMousemove)
