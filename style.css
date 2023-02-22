@@ -31,3 +31,15 @@ h2 {
 .add-input {
 	margin-bottom: 10px;
 }
+
+.tooltip {
+	position: absolute;
+	background-color: royalblue;
+	border: solid;
+	padding: 5px;
+
+}
+
+#acknowledgements {
+	text-align: center;
+}
