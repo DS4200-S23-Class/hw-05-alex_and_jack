@@ -72,4 +72,34 @@ d3.csv("data/bar-data.csv").then((data) => {
         .attr("width", X_SCALE.bandwidth()) 
         .attr("height", (d) => { return (VIS_HEIGHT - Y_SCALE(d.amount)); })
         .attr("class", "bar");
+       const TOOLTIP = d3.select("#bar-chart")
+                        .append("div")
+                          .attr("class", "tooltip")
+                          .style("opacity", 0);
+
+  // Define event handler functions for tooltips
+    function handleMouseover(event, d) {
+      // on mouseover, make opaque 
+      TOOLTIP.style("opacity", 1); 
+      
+    }
+
+    function handleMousemove(event, d) {
+      // position the tooltip and fill in information 
+      TOOLTIP.html("Category: " + d.category + "<br>Value: " + d.amount)
+              .style("left", (event.pageX + 10) + "px") //add offset
+                                                          // from mouse
+              .style("top", (event.pageY - 50) + "px"); 
+    }
+
+    function handleMouseleave(event, d) {
+      // on mouseleave, make transparant again 
+      TOOLTIP.style("opacity", 0); 
+    } 
+
+    // Add event listeners
+    FRAME2.selectAll(".bar")
+          .on("mouseover", handleMouseover) //add event listeners
+          .on("mousemove", handleMousemove)
+          .on("mouseleave", handleMouseleave); 
 });
