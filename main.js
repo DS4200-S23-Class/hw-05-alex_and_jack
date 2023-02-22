@@ -4,7 +4,7 @@ const FRAME_HEIGHT = 200;
 const FRAME_WIDTH = 500; 
 const MARGINS = {left: 50, right: 50, top: 50, bottom: 50};
 
-const FRAME1 = d3.select("#scatterplot") 
+const FRAME1 = d3.select("scatterplot") 
                   .append("svg") 
                     .attr("height", FRAME_HEIGHT)   
                     .attr("width", FRAME_WIDTH)
@@ -19,7 +19,7 @@ d3.csv("data/scatter-data.csv").then((data) => {
   // vis 
 
   // let's check our data
-  console.log(data); //Notice this data has 3 columns
+  console.log(data + 1); //Notice this data has 3 columns
                       // to access data in a column, use .
 
   // add our circles with styling 
@@ -37,7 +37,7 @@ d3.csv("data/scatter-data.csv").then((data) => {
 const VIS_HEIGHT = FRAME_HEIGHT - MARGINS.top - MARGINS.bottom;
 const VIS_WIDTH = FRAME_WIDTH - MARGINS.left - MARGINS.right; 
 
-const FRAME2 = d3.select("#bar-chart")
+const FRAME2 = d3.select("bar-chart")
                   .append("svg")
                     .attr("height", FRAME_HEIGHT)
                     .attr("width", FRAME_WIDTH)
